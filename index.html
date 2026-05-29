@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Gutter Quote | Affordable Home</title>
-  <meta name="description" content="Get a free quote on maintenance-free, clog-free gutters installed by local pros." />
+  <meta name="description" content="Get the lowest price on maintenance-free gutters that you'll never have to clean." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -30,8 +30,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 48px 16px 64px;
+      padding: 0 16px 64px;
       text-align: center;
     }
 
@@ -43,6 +42,23 @@
       z-index: 0;
     }
 
+    /* Logo bar pinned at top */
+    .hero-logo-bar {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1100px;
+      padding: 24px 0 0;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .hero-logo {
+      max-width: 240px;
+      filter: brightness(0) invert(1);
+    }
+
     .hero-inner {
       position: relative;
       z-index: 1;
@@ -51,12 +67,6 @@
       align-items: center;
       width: 100%;
       max-width: 640px;
-    }
-
-    .hero-logo {
-      max-width: 260px;
-      margin-bottom: 28px;
-      filter: brightness(0) invert(1);
     }
 
     .hero h1 {
@@ -100,22 +110,19 @@
     }
 
     .step-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      color: #555;
+      color: #aaa;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       transition: color 150ms;
     }
 
     .step-label.active { color: #F97316; }
     .step-label.done { color: #555; }
 
-    .step-label .check {
-      display: none;
-      color: #F97316;
-    }
+    .step-label .check { display: none; color: #F97316; }
     .step-label.done .check { display: inline; }
 
     .progress-track {
@@ -206,6 +213,12 @@
 
     .field-error.visible { display: block; }
 
+    .zip-hint {
+      font-size: 11px;
+      color: #888;
+      margin-top: 4px;
+    }
+
     .btn-orange {
       width: 100%;
       padding: 14px;
@@ -287,8 +300,6 @@
       .steps-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
-    .step-item {}
-
     .step-circle {
       width: 56px;
       height: 56px;
@@ -355,10 +366,7 @@
       font-weight: 500;
     }
 
-    .check-list li svg {
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .check-list li svg { flex-shrink: 0; margin-top: 2px; }
 
     .col-img img {
       width: 100%;
@@ -381,13 +389,10 @@
       .features-grid { grid-template-columns: 1fr; gap: 28px; }
     }
 
-    .feature-item {}
-
     .feature-icon {
       width: 64px;
       height: 64px;
       margin: 0 auto 16px;
-      color: #F97316;
     }
 
     .feature-item h3 {
@@ -405,8 +410,6 @@
 
     /* Section 4 -- About */
     .about-section { background: #fff; }
-
-    .about-section .col-img { position: relative; }
 
     .about-section .col-img img {
       width: 100%;
@@ -436,11 +439,7 @@
       flex-wrap: wrap;
     }
 
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .stat { display: flex; flex-direction: column; gap: 4px; }
 
     .stat-num {
       font-size: 26px;
@@ -492,33 +491,28 @@
       font-size: clamp(24px, 3.5vw, 42px);
       font-weight: 800;
       color: #fff;
-      margin-bottom: 12px;
-    }
-
-    .cta-banner p {
-      font-size: 18px;
-      color: rgba(255,255,255,0.9);
       margin-bottom: 32px;
     }
 
     .btn-white {
       display: inline-block;
-      padding: 16px 40px;
+      padding: 18px 64px;
       background: #fff;
       color: #F97316;
       font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 800;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
       transition: transform 100ms, box-shadow 150ms;
       box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      letter-spacing: 0.3px;
     }
 
     .btn-white:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(0,0,0,0.18);
     }
 
@@ -548,9 +542,6 @@
       margin-bottom: 10px;
     }
 
-    /* Utility */
-    .text-center { text-align: center; }
-
     @media (max-width: 540px) {
       .field-row { grid-template-columns: 1fr; }
       .form-card { padding: 24px 18px; }
@@ -561,10 +552,14 @@
 
 <!-- ── HERO ── -->
 <section class="hero" id="top">
-  <div class="hero-inner">
+  <!-- Logo pinned near top like a header -->
+  <div class="hero-logo-bar">
     <img src="./logo.svg" alt="Affordable Home" class="hero-logo" />
+  </div>
+
+  <div class="hero-inner">
     <h1>Stop Cleaning Your Gutters Forever</h1>
-    <p class="sub">Get a free quote on maintenance-free gutters that never clog — installed by local pros.</p>
+    <p class="sub">Get the lowest price on maintenance-free gutters that you'll never have to clean.</p>
 
     <!-- FORM CARD -->
     <div class="form-card">
@@ -572,25 +567,56 @@
       <!-- Progress Bar -->
       <div class="progress-wrap">
         <div class="step-labels">
-          <span class="step-label active" id="lbl-1">
-            <span class="check">✓</span> Your Info
-          </span>
-          <span class="step-label" id="lbl-2">
-            <span class="check">✓</span> Your Home
-          </span>
-          <span class="step-label" id="lbl-3">
-            <span class="check">✓</span> Your Address
-          </span>
+          <span class="step-label active" id="lbl-1"><span class="check">✓</span> Gutter Age</span>
+          <span class="step-label" id="lbl-2"><span class="check">✓</span> Home Size</span>
+          <span class="step-label" id="lbl-3"><span class="check">✓</span> Your Info</span>
+          <span class="step-label" id="lbl-4"><span class="check">✓</span> Phone</span>
         </div>
         <div class="progress-track">
-          <div class="progress-fill" id="progress-fill" style="width: 33.33%"></div>
+          <div class="progress-fill" id="progress-fill" style="width: 25%"></div>
         </div>
-        <div class="step-count" id="step-count">Step 1 of 3</div>
+        <div class="step-count" id="step-count">Step 1 of 4</div>
       </div>
 
-      <!-- Step 1 -->
+      <!-- Step 1: Gutter Age -->
       <div class="form-step active" id="step-1">
-        <h2>Tell Us About You</h2>
+        <h2>How old are your current gutters?</h2>
+        <div class="field">
+          <select id="gutter-age">
+            <option value="">Select an option</option>
+            <option>Less than 5 years</option>
+            <option>5–10 years</option>
+            <option>10–20 years</option>
+            <option>20+ years</option>
+            <option>I don't know</option>
+          </select>
+          <span class="field-error" id="err-gutter-age">Please select an option.</span>
+        </div>
+        <button class="btn-orange" onclick="nextStep(1)">Next &rarr;</button>
+      </div>
+
+      <!-- Step 2: Home Size -->
+      <div class="form-step" id="step-2">
+        <h2>Approximate square footage of your home</h2>
+        <div class="field">
+          <select id="sqft">
+            <option value="">Select an option</option>
+            <option>Under 1,000 sq ft</option>
+            <option>1,000–1,500 sq ft</option>
+            <option>1,500–2,000 sq ft</option>
+            <option>2,000–2,500 sq ft</option>
+            <option>2,500–3,000 sq ft</option>
+            <option>3,000+ sq ft</option>
+          </select>
+          <span class="field-error" id="err-sqft">Please select an option.</span>
+        </div>
+        <button class="btn-orange" onclick="nextStep(2)">Next &rarr;</button>
+        <br /><button class="btn-back" onclick="prevStep(2)">&larr; Back</button>
+      </div>
+
+      <!-- Step 3: Your Info -->
+      <div class="form-step" id="step-3">
+        <h2>Tell us a little about you</h2>
         <div class="field-row">
           <div class="field">
             <label for="first-name">First Name</label>
@@ -609,89 +635,25 @@
           <span class="field-error" id="err-email">Please enter a valid email address.</span>
         </div>
         <div class="field">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" placeholder="Detecting…" maxlength="5" />
+          <span class="field-error" id="err-zip">Please enter a valid 5-digit ZIP code.</span>
+          <span class="zip-hint" id="zip-hint"></span>
+        </div>
+        <button class="btn-orange" onclick="nextStep(3)">Next &rarr;</button>
+        <br /><button class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+      </div>
+
+      <!-- Step 4: Phone -->
+      <div class="form-step" id="step-4">
+        <h2>What's the best number to reach you?</h2>
+        <div class="field">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" placeholder="(555) 555-5555" maxlength="14" />
           <span class="field-error" id="err-phone">Please enter a valid phone number.</span>
         </div>
-        <button class="btn-orange" onclick="nextStep(1)">Get My Free Quote &rarr;</button>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="form-step" id="step-2">
-        <h2>Tell Us About Your Home</h2>
-        <div class="field">
-          <label for="gutter-age">How old are your current gutters?</label>
-          <select id="gutter-age">
-            <option value="">Select an option</option>
-            <option>Less than 5 years</option>
-            <option>5-10 years</option>
-            <option>10-20 years</option>
-            <option>20+ years</option>
-            <option>I don't know</option>
-          </select>
-          <span class="field-error" id="err-gutter-age">Please select an option.</span>
-        </div>
-        <div class="field">
-          <label for="sqft">Approximate square footage of your home</label>
-          <select id="sqft">
-            <option value="">Select an option</option>
-            <option>Under 1,000 sq ft</option>
-            <option>1,000-1,500 sq ft</option>
-            <option>1,500-2,000 sq ft</option>
-            <option>2,000-2,500 sq ft</option>
-            <option>2,500-3,000 sq ft</option>
-            <option>3,000+ sq ft</option>
-          </select>
-          <span class="field-error" id="err-sqft">Please select an option.</span>
-        </div>
-        <button class="btn-orange" onclick="nextStep(2)">Next Step &rarr;</button>
-        <br />
-        <button class="btn-back" onclick="prevStep(2)">&larr; Back</button>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="form-step" id="step-3">
-        <h2>Where Is Your Home?</h2>
-        <div class="field">
-          <label for="street">Street Address</label>
-          <input type="text" id="street" placeholder="123 Main St" />
-          <span class="field-error" id="err-street">Please enter your street address.</span>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="city">City</label>
-            <input type="text" id="city" placeholder="Columbus" />
-            <span class="field-error" id="err-city">Please enter your city.</span>
-          </div>
-          <div class="field">
-            <label for="state">State</label>
-            <select id="state">
-              <option value="">Select</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-            <span class="field-error" id="err-state">Please select a state.</span>
-          </div>
-        </div>
-        <div class="field">
-          <label for="zip">ZIP Code</label>
-          <input type="text" id="zip" placeholder="43215" maxlength="5" />
-          <span class="field-error" id="err-zip">Please enter a valid 5-digit ZIP code.</span>
-        </div>
-        <button class="btn-orange" onclick="submitForm()">Submit My Request &rarr;</button>
-        <br />
-        <button class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+        <button class="btn-orange" onclick="submitForm()">Get My Free Quote &rarr;</button>
+        <br /><button class="btn-back" onclick="prevStep(4)">&larr; Back</button>
       </div>
 
     </div><!-- /form-card -->
@@ -702,22 +664,22 @@
 <section class="how-it-works">
   <div class="container">
     <p class="section-label">How It Works</p>
-    <h2 class="section-title">From quote to install in 3 simple steps</h2>
+    <h2 class="section-title">New Gutters In 3 Simple Steps</h2>
     <div class="steps-grid">
       <div class="step-item">
         <div class="step-circle">1</div>
-        <h3>Get Your Free Quote</h3>
-        <p>Fill out the form above and we'll match you with a local gutter pro within 24 hours.</p>
+        <h3>Free Custom Quote</h3>
+        <p>We find you the lowest price to help you get new gutters within your budget.</p>
       </div>
       <div class="step-item">
         <div class="step-circle">2</div>
-        <h3>Schedule Your Install</h3>
+        <h3>Schedule Installation</h3>
         <p>A certified installer visits your home, measures, and gives you a firm price.</p>
       </div>
       <div class="step-item">
         <div class="step-circle">3</div>
-        <h3>Enjoy Clog-Free Gutters</h3>
-        <p>Sit back. Your new gutters come with a lifetime no-clog guarantee.</p>
+        <h3>Never Clean Your Gutters Again</h3>
+        <p>Sit back and enjoy. Your new gutters come with a lifetime no-clog guarantee.</p>
       </div>
     </div>
   </div>
@@ -732,24 +694,20 @@
         <ul class="check-list">
           <li>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Never clean your gutters again
+            We vet hundreds of gutter installers so you don't have to
           </li>
           <li>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Keeps water away from your foundation
+            You get exclusive pricing on projects that you need done
           </li>
           <li>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Backed by a lifetime warranty
-          </li>
-          <li>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Local installers, nationally trusted
+            We've saved 1,000s of homeowners from overpaying for gutters
           </li>
         </ul>
       </div>
       <div class="col-img">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="Gutter installation" loading="lazy" />
+        <img src="./why-image.jpg" alt="Happy homeowners" loading="lazy" />
       </div>
     </div>
   </div>
@@ -763,7 +721,6 @@
     <div class="features-grid">
       <div class="feature-item">
         <div class="feature-icon">
-          <!-- Shield SVG -->
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M32 4L8 14v20c0 14 12 24 24 26 12-2 24-12 24-26V14L32 4z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
             <path d="M22 32l7 7 13-13" stroke="#F97316" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -774,7 +731,6 @@
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <!-- Water Drop SVG -->
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M32 8C32 8 12 28 12 40a20 20 0 0040 0C52 28 32 8 32 8z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
             <path d="M24 42c0-4 4-8 8-10" stroke="#F97316" stroke-width="3" stroke-linecap="round"/>
@@ -785,7 +741,6 @@
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <!-- Wrench SVG -->
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M44 12a12 12 0 00-12 14L14 44a4 4 0 005.6 5.6l18-18A12 12 0 0044 12z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
             <circle cx="44" cy="18" r="4" fill="#F97316"/>
@@ -832,7 +787,6 @@
 <!-- ── SECTION 5: TESTIMONIAL ── -->
 <section class="testimonial-section">
   <div class="container" style="max-width:800px;">
-    <!-- Large open-quote icon -->
     <svg class="quote-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 28c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H10V28zm22 0c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H32V28z" fill="#F97316"/>
     </svg>
@@ -844,9 +798,8 @@
 <!-- ── SECTION 6: FINAL CTA ── -->
 <section class="cta-banner">
   <div class="container" style="max-width:700px;">
-    <h2>Ready to Never Clean Gutters Again?</h2>
-    <p>Get your free quote in under 2 minutes.</p>
-    <a href="#top" class="btn-white">Get My Free Quote</a>
+    <h2>Are you done cleaning your gutters for good?</h2>
+    <a href="#top" class="btn-white">Yes</a>
   </div>
 </section>
 
@@ -859,9 +812,32 @@
 
 <script>
   let currentStep = 1;
+  const TOTAL_STEPS = 4;
+
+  // ── Auto-detect ZIP via geolocation + reverse geocode ──
+  function tryAutoZip() {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      const lat = pos.coords.latitude;
+      const lon = pos.coords.longitude;
+      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
+        .then(r => r.json())
+        .then(data => {
+          const zip = data.address && data.address.postcode;
+          if (zip && /^\d{5}/.test(zip)) {
+            const zipInput = document.getElementById('zip');
+            if (!zipInput.value) {
+              zipInput.value = zip.substring(0, 5);
+              document.getElementById('zip-hint').textContent = 'Auto-filled from your location';
+            }
+          }
+        })
+        .catch(() => {});
+    }, function() {}, { timeout: 5000 });
+  }
 
   // ── Phone masking ──
-  document.getElementById('phone').addEventListener('keyup', function(e) {
+  document.getElementById('phone').addEventListener('keyup', function() {
     let val = this.value.replace(/\D/g, '').substring(0, 10);
     if (val.length >= 7) {
       val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
@@ -871,6 +847,11 @@
       val = '(' + val;
     }
     this.value = val;
+  });
+
+  // ── ZIP: only allow digits ──
+  document.getElementById('zip').addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '').substring(0, 5);
   });
 
   // ── Validation helpers ──
@@ -884,67 +865,42 @@
     document.getElementById(errId).classList.remove('visible');
   }
 
-  function clearAllErrors() {
-    document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-    document.querySelectorAll('.field-error.visible').forEach(el => el.classList.remove('visible'));
-  }
-
-  function validateStep1() {
+  function validateStep(step) {
     let valid = true;
-    const firstName = document.getElementById('first-name').value.trim();
-    const lastName = document.getElementById('last-name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+    if (step === 1) {
+      if (!document.getElementById('gutter-age').value) {
+        showError('gutter-age', 'err-gutter-age'); valid = false;
+      } else clearError('gutter-age', 'err-gutter-age');
+    }
+    if (step === 2) {
+      if (!document.getElementById('sqft').value) {
+        showError('sqft', 'err-sqft'); valid = false;
+      } else clearError('sqft', 'err-sqft');
+    }
+    if (step === 3) {
+      const firstName = document.getElementById('first-name').value.trim();
+      const lastName  = document.getElementById('last-name').value.trim();
+      const email     = document.getElementById('email').value.trim();
+      const zip       = document.getElementById('zip').value.trim();
 
-    if (!firstName) { showError('first-name', 'err-first-name'); valid = false; }
-    else clearError('first-name', 'err-first-name');
+      if (!firstName) { showError('first-name', 'err-first-name'); valid = false; }
+      else clearError('first-name', 'err-first-name');
 
-    if (!lastName) { showError('last-name', 'err-last-name'); valid = false; }
-    else clearError('last-name', 'err-last-name');
+      if (!lastName) { showError('last-name', 'err-last-name'); valid = false; }
+      else clearError('last-name', 'err-last-name');
 
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRe.test(email)) { showError('email', 'err-email'); valid = false; }
-    else clearError('email', 'err-email');
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRe.test(email)) { showError('email', 'err-email'); valid = false; }
+      else clearError('email', 'err-email');
 
-    const phoneClean = phone.replace(/\D/g, '');
-    if (phoneClean.length !== 10) { showError('phone', 'err-phone'); valid = false; }
-    else clearError('phone', 'err-phone');
-
-    return valid;
-  }
-
-  function validateStep2() {
-    let valid = true;
-    if (!document.getElementById('gutter-age').value) {
-      showError('gutter-age', 'err-gutter-age'); valid = false;
-    } else clearError('gutter-age', 'err-gutter-age');
-
-    if (!document.getElementById('sqft').value) {
-      showError('sqft', 'err-sqft'); valid = false;
-    } else clearError('sqft', 'err-sqft');
-
-    return valid;
-  }
-
-  function validateStep3() {
-    let valid = true;
-    const street = document.getElementById('street').value.trim();
-    const city = document.getElementById('city').value.trim();
-    const state = document.getElementById('state').value;
-    const zip = document.getElementById('zip').value.trim();
-
-    if (!street) { showError('street', 'err-street'); valid = false; }
-    else clearError('street', 'err-street');
-
-    if (!city) { showError('city', 'err-city'); valid = false; }
-    else clearError('city', 'err-city');
-
-    if (!state) { showError('state', 'err-state'); valid = false; }
-    else clearError('state', 'err-state');
-
-    if (!/^\d{5}$/.test(zip)) { showError('zip', 'err-zip'); valid = false; }
-    else clearError('zip', 'err-zip');
-
+      if (!/^\d{5}$/.test(zip)) { showError('zip', 'err-zip'); valid = false; }
+      else clearError('zip', 'err-zip');
+    }
+    if (step === 4) {
+      const phoneClean = document.getElementById('phone').value.replace(/\D/g, '');
+      if (phoneClean.length !== 10) { showError('phone', 'err-phone'); valid = false; }
+      else clearError('phone', 'err-phone');
+    }
     return valid;
   }
 
@@ -953,23 +909,22 @@
     const current = document.getElementById('step-' + currentStep);
     current.classList.remove('active');
     current.style.opacity = '0';
-
     setTimeout(() => {
       current.style.display = 'none';
       currentStep = step;
       updateProgress();
-
       const next = document.getElementById('step-' + currentStep);
       next.style.display = 'block';
       next.style.opacity = '0';
       next.classList.add('active');
+      // Trigger ZIP auto-detect when step 3 first shows
+      if (step === 3) tryAutoZip();
       setTimeout(() => { next.style.opacity = '1'; }, 10);
     }, 150);
   }
 
   function nextStep(from) {
-    if (from === 1 && !validateStep1()) return;
-    if (from === 2 && !validateStep2()) return;
+    if (!validateStep(from)) return;
     goToStep(from + 1);
   }
 
@@ -978,11 +933,10 @@
   }
 
   function updateProgress() {
-    const pct = (currentStep / 3) * 100;
+    const pct = (currentStep / TOTAL_STEPS) * 100;
     document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('step-count').textContent = 'Step ' + currentStep + ' of 3';
-
-    for (let i = 1; i <= 3; i++) {
+    document.getElementById('step-count').textContent = 'Step ' + currentStep + ' of ' + TOTAL_STEPS;
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
       const lbl = document.getElementById('lbl-' + i);
       lbl.classList.remove('active', 'done');
       if (i === currentStep) lbl.classList.add('active');
@@ -991,23 +945,17 @@
   }
 
   function submitForm() {
-    if (!validateStep3()) return;
-
+    if (!validateStep(4)) return;
     const formData = {
-      firstName: document.getElementById('first-name').value.trim(),
-      lastName: document.getElementById('last-name').value.trim(),
-      email: document.getElementById('email').value.trim(),
-      phone: document.getElementById('phone').value.trim(),
-      gutterAge: document.getElementById('gutter-age').value,
-      sqft: document.getElementById('sqft').value,
-      street: document.getElementById('street').value.trim(),
-      city: document.getElementById('city').value.trim(),
-      state: document.getElementById('state').value,
-      zip: document.getElementById('zip').value.trim(),
+      gutterAge:  document.getElementById('gutter-age').value,
+      sqft:       document.getElementById('sqft').value,
+      firstName:  document.getElementById('first-name').value.trim(),
+      lastName:   document.getElementById('last-name').value.trim(),
+      email:      document.getElementById('email').value.trim(),
+      zip:        document.getElementById('zip').value.trim(),
+      phone:      document.getElementById('phone').value.trim(),
     };
-
     console.log('Affordable Home — Form Submission:', formData);
-
     window.location.href = './thank-you.html';
   }
 </script>
