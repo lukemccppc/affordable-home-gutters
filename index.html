@@ -83,6 +83,9 @@
       max-width: 640px;
     }
 
+    .desktop-br { display: none; }
+    @media (min-width: 768px) { .desktop-br { display: block; } }
+
     .hero h1 {
       font-size: clamp(32px, 5vw, 52px);
       font-weight: 800;
@@ -588,7 +591,7 @@
   </div>
 
   <div class="hero-inner">
-    <h1>Never Clean Your Gutters Again</h1>
+    <h1>Never Clean Your<br class="desktop-br"> Gutters Again</h1>
     <p class="sub">Get the lowest price on maintenance-free gutters that you'll never have to clean.</p>
 
     <!-- FORM CARD -->
