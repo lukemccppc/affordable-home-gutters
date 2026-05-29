@@ -26,7 +26,7 @@
     .hero {
       position: relative;
       min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600') center center / cover no-repeat;
+      background: url('./hero.jpg') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -54,7 +54,7 @@
     }
 
     .hero-logo {
-      max-width: 180px;
+      width: 220px;
       margin-bottom: 28px;
     }
 
@@ -529,7 +529,8 @@
     }
 
     .footer-logo {
-      max-width: 120px;
+      width: 160px;
+      display: block;
       margin: 0 auto 16px;
     }
 
@@ -559,7 +560,18 @@
 <!-- ── HERO ── -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <img src="./logo.png" alt="Affordable Home" class="hero-logo" />
+    <svg class="hero-logo" viewBox="0 0 340 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Affordable Home">
+      <!-- House icon -->
+      <path d="M18 39 L42 15 L66 39" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="25" y="37" width="34" height="28" rx="4" stroke="white" stroke-width="4" fill="none"/>
+      <rect x="30" y="43" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+      <rect x="41" y="43" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+      <rect x="30" y="54" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+      <rect x="41" y="54" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+      <path d="M22 72 Q42 85 62 72" stroke="white" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+      <!-- Wordmark -->
+      <text x="82" y="51" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="26" fill="white" letter-spacing="-0.3">Affordable Home</text>
+    </svg>
     <h1>Stop Cleaning Your Gutters Forever</h1>
     <p class="sub">Get a free quote on maintenance-free gutters that never clog — installed by local pros.</p>
 
@@ -849,7 +861,16 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <img src="./logo.png" alt="Affordable Home" class="footer-logo" />
+  <svg class="footer-logo" viewBox="0 0 340 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Affordable Home">
+    <path d="M18 39 L42 15 L66 39" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="25" y="37" width="34" height="28" rx="4" stroke="white" stroke-width="4" fill="none"/>
+    <rect x="30" y="43" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+    <rect x="41" y="43" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+    <rect x="30" y="54" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+    <rect x="41" y="54" width="9" height="9" rx="2" stroke="white" stroke-width="2.8" fill="none"/>
+    <path d="M22 72 Q42 85 62 72" stroke="white" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <text x="82" y="51" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="26" fill="white" letter-spacing="-0.3">Affordable Home</text>
+  </svg>
   <p class="copyright">&copy; 2025 Affordable Home. All Rights Reserved.</p>
   <p>Affordable Home is a lead generation service connecting homeowners with local gutter installation professionals. We are not a contractor.</p>
 </footer>
