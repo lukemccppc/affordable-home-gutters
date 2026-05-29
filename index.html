@@ -34,11 +34,6 @@
       text-align: center;
     }
 
-    @media (min-width: 768px) {
-      .hero { justify-content: flex-end; padding-bottom: 72px; }
-      .hero-logo-bar { margin-bottom: 0; position: absolute; top: 24px; }
-    }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -62,6 +57,17 @@
     .hero-logo {
       max-width: 240px;
       filter: brightness(0) invert(1);
+    }
+
+    @media (min-width: 768px) {
+      .hero { justify-content: flex-end; padding-bottom: 72px; }
+      .hero-logo-bar {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        right: 0;
+        margin-bottom: 0;
+      }
     }
 
     .hero-inner {
