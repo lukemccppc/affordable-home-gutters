@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Gutter Quote | Affordable Home</title>
+  <meta name="description" content="Get a free quote on maintenance-free, clog-free gutters installed by local pros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1A1A1A;
+      background: #F5F5F5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600') center center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 16px 64px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 31, 60, 0.72);
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .hero-logo {
+      max-width: 180px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p.sub {
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 300;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      width: 100%;
+      max-width: 560px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      text-align: left;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      margin-bottom: 28px;
+    }
+
+    .step-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .step-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 150ms;
+    }
+
+    .step-label.active { color: #F97316; }
+    .step-label.done { color: #555; }
+
+    .step-label .check {
+      display: none;
+      color: #F97316;
+    }
+    .step-label.done .check { display: inline; }
+
+    .progress-track {
+      height: 6px;
+      background: #D1D5DB;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #F97316;
+      border-radius: 99px;
+      transition: width 300ms ease;
+    }
+
+    .step-count {
+      font-size: 12px;
+      color: #555;
+      margin-top: 8px;
+      text-align: right;
+    }
+
+    /* Form steps */
+    .form-step {
+      display: none;
+      opacity: 0;
+      transition: opacity 150ms ease;
+    }
+
+    .form-step.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .form-step h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0A1F3C;
+      margin-bottom: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      padding: 11px 14px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 8px;
+      color: #1A1A1A;
+      background: #fff;
+      outline: none;
+      transition: border-color 150ms;
+      width: 100%;
+    }
+
+    .field input:focus,
+    .field select:focus { border-color: #F97316; }
+
+    .field input.error,
+    .field select.error { border-color: #ef4444; }
+
+    .field-error {
+      font-size: 12px;
+      color: #ef4444;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .field-error.visible { display: block; }
+
+    .btn-orange {
+      width: 100%;
+      padding: 14px;
+      background: #F97316;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 150ms, transform 100ms;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-orange:hover { background: #ea6c0f; }
+    .btn-orange:active { transform: scale(0.99); }
+
+    .btn-back {
+      display: inline-block;
+      font-size: 13px;
+      color: #555;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 12px;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      padding: 0;
+    }
+
+    .btn-back:hover { color: #F97316; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 16px; }
+
+    @media (max-width: 767px) { section { padding: 48px 16px; } }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #F97316;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 48px;
+    }
+
+    /* Section 1 -- How It Works */
+    .how-it-works {
+      background: #0A1F3C;
+      color: #fff;
+    }
+
+    .how-it-works .section-title { color: #fff; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      text-align: center;
+    }
+
+    @media (max-width: 767px) {
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .step-item {}
+
+    .step-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #F97316;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .step-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .step-item p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.6;
+    }
+
+    /* Section 2 -- Why */
+    .why-section { background: #fff; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 767px) {
+      .two-col { grid-template-columns: 1fr; gap: 36px; }
+      .two-col.img-right .col-img { order: -1; }
+    }
+
+    .two-col h2 {
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 800;
+      color: #0A1F3C;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      color: #1A1A1A;
+      font-weight: 500;
+    }
+
+    .check-list li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .col-img img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      height: 360px;
+    }
+
+    /* Section 3 -- Features */
+    .features-section { background: #F5F5F5; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    @media (max-width: 767px) {
+      .features-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    .feature-item {}
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      color: #F97316;
+    }
+
+    .feature-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0A1F3C;
+      margin-bottom: 10px;
+    }
+
+    .feature-item p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Section 4 -- About */
+    .about-section { background: #fff; }
+
+    .about-section .col-img { position: relative; }
+
+    .about-section .col-img img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      height: 420px;
+    }
+
+    .about-section h2 {
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 800;
+      color: #0A1F3C;
+      margin-bottom: 18px;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #F97316;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* Section 5 -- Testimonial */
+    .testimonial-section {
+      background: #0A1F3C;
+      text-align: center;
+    }
+
+    .quote-icon {
+      color: #F97316;
+      margin: 0 auto 20px;
+      width: 52px;
+      height: 52px;
+    }
+
+    .testimonial-text {
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-style: italic;
+      color: #fff;
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+
+    .testimonial-attr {
+      font-size: 15px;
+      color: #F97316;
+      font-weight: 600;
+    }
+
+    /* Section 6 -- Final CTA */
+    .cta-banner {
+      background: #F97316;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 32px;
+    }
+
+    .btn-white {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #fff;
+      color: #F97316;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 100ms, box-shadow 150ms;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    }
+
+    /* Footer */
+    footer {
+      background: #0A1F3C;
+      padding: 48px 16px 36px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      max-width: 120px;
+      margin: 0 auto 16px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer .copyright {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    /* Utility */
+    .text-center { text-align: center; }
+
+    @media (max-width: 540px) {
+      .field-row { grid-template-columns: 1fr; }
+      .form-card { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <img src="./logo.png" alt="Affordable Home" class="hero-logo" />
+    <h1>Stop Cleaning Your Gutters Forever</h1>
+    <p class="sub">Get a free quote on maintenance-free gutters that never clog — installed by local pros.</p>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+
+      <!-- Progress Bar -->
+      <div class="progress-wrap">
+        <div class="step-labels">
+          <span class="step-label active" id="lbl-1">
+            <span class="check">✓</span> Your Info
+          </span>
+          <span class="step-label" id="lbl-2">
+            <span class="check">✓</span> Your Home
+          </span>
+          <span class="step-label" id="lbl-3">
+            <span class="check">✓</span> Your Address
+          </span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill" style="width: 33.33%"></div>
+        </div>
+        <div class="step-count" id="step-count">Step 1 of 3</div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="form-step active" id="step-1">
+        <h2>Tell Us About You</h2>
+        <div class="field-row">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="Jane" />
+            <span class="field-error" id="err-first-name">Please enter your first name.</span>
+          </div>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Smith" />
+            <span class="field-error" id="err-last-name">Please enter your last name.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="jane@example.com" />
+          <span class="field-error" id="err-email">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(555) 555-5555" maxlength="14" />
+          <span class="field-error" id="err-phone">Please enter a valid phone number.</span>
+        </div>
+        <button class="btn-orange" onclick="nextStep(1)">Get My Free Quote &rarr;</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step" id="step-2">
+        <h2>Tell Us About Your Home</h2>
+        <div class="field">
+          <label for="gutter-age">How old are your current gutters?</label>
+          <select id="gutter-age">
+            <option value="">Select an option</option>
+            <option>Less than 5 years</option>
+            <option>5-10 years</option>
+            <option>10-20 years</option>
+            <option>20+ years</option>
+            <option>I don't know</option>
+          </select>
+          <span class="field-error" id="err-gutter-age">Please select an option.</span>
+        </div>
+        <div class="field">
+          <label for="sqft">Approximate square footage of your home</label>
+          <select id="sqft">
+            <option value="">Select an option</option>
+            <option>Under 1,000 sq ft</option>
+            <option>1,000-1,500 sq ft</option>
+            <option>1,500-2,000 sq ft</option>
+            <option>2,000-2,500 sq ft</option>
+            <option>2,500-3,000 sq ft</option>
+            <option>3,000+ sq ft</option>
+          </select>
+          <span class="field-error" id="err-sqft">Please select an option.</span>
+        </div>
+        <button class="btn-orange" onclick="nextStep(2)">Next Step &rarr;</button>
+        <br />
+        <button class="btn-back" onclick="prevStep(2)">&larr; Back</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step" id="step-3">
+        <h2>Where Is Your Home?</h2>
+        <div class="field">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" placeholder="123 Main St" />
+          <span class="field-error" id="err-street">Please enter your street address.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Columbus" />
+            <span class="field-error" id="err-city">Please enter your city.</span>
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <select id="state">
+              <option value="">Select</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+            <span class="field-error" id="err-state">Please select a state.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" placeholder="43215" maxlength="5" />
+          <span class="field-error" id="err-zip">Please enter a valid 5-digit ZIP code.</span>
+        </div>
+        <button class="btn-orange" onclick="submitForm()">Submit My Request &rarr;</button>
+        <br />
+        <button class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+      </div>
+
+    </div><!-- /form-card -->
+  </div><!-- /hero-inner -->
+</section>
+
+<!-- ── SECTION 1: HOW IT WORKS ── -->
+<section class="how-it-works">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">From quote to install in 3 simple steps</h2>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <h3>Get Your Free Quote</h3>
+        <p>Fill out the form above and we'll match you with a local gutter pro within 24 hours.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <h3>Schedule Your Install</h3>
+        <p>A certified installer visits your home, measures, and gives you a firm price.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <h3>Enjoy Clog-Free Gutters</h3>
+        <p>Sit back. Your new gutters come with a lifetime no-clog guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 2: WHY ── -->
+<section class="why-section">
+  <div class="container">
+    <div class="two-col img-right">
+      <div class="col-text">
+        <h2>Why Homeowners Choose Affordable Home</h2>
+        <ul class="check-list">
+          <li>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Never clean your gutters again
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Keeps water away from your foundation
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Backed by a lifetime warranty
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Local installers, nationally trusted
+          </li>
+        </ul>
+      </div>
+      <div class="col-img">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="Gutter installation" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3: FEATURES ── -->
+<section class="features-section">
+  <div class="container">
+    <p class="section-label">What You Get</p>
+    <h2 class="section-title" style="color:#0A1F3C;">Everything Included, Nothing Extra</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <!-- Shield SVG -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4L8 14v20c0 14 12 24 24 26 12-2 24-12 24-26V14L32 4z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M22 32l7 7 13-13" stroke="#F97316" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Lifetime No-Clog Guarantee</h3>
+        <p>If it ever clogs, we fix it free. No questions asked, no hassle.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <!-- Water Drop SVG -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 8C32 8 12 28 12 40a20 20 0 0040 0C52 28 32 8 32 8z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M24 42c0-4 4-8 8-10" stroke="#F97316" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Seamless Gutter Systems</h3>
+        <p>Custom-fit to your home, no seams to leak or pull apart over time.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <!-- Wrench SVG -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44 12a12 12 0 00-12 14L14 44a4 4 0 005.6 5.6l18-18A12 12 0 0044 12z" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="44" cy="18" r="4" fill="#F97316"/>
+            <circle cx="18" cy="47" r="3" fill="#F97316"/>
+          </svg>
+        </div>
+        <h3>Professional Installation</h3>
+        <p>Certified local pros handle everything from measurement to cleanup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: ABOUT ── -->
+<section class="about-section">
+  <div class="container">
+    <div class="two-col">
+      <div class="col-img">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800" alt="Happy homeowners" loading="lazy" />
+      </div>
+      <div class="col-text">
+        <h2>We Help Homeowners Protect What Matters Most</h2>
+        <p>Affordable Home connects homeowners across the country with vetted, certified local gutter specialists. We do the homework so you don't have to — every installer in our network is background-checked, licensed, and insured.</p>
+        <p>Since launching, we've helped thousands of families eliminate the hassle of gutter maintenance and protect their homes from water damage. Getting started takes less than two minutes.</p>
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Local Installers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">10,000+</span>
+            <span class="stat-label">Homes Served</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Lifetime</span>
+            <span class="stat-label">Warranty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: TESTIMONIAL ── -->
+<section class="testimonial-section">
+  <div class="container" style="max-width:800px;">
+    <!-- Large open-quote icon -->
+    <svg class="quote-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 28c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H10V28zm22 0c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H32V28z" fill="#F97316"/>
+    </svg>
+    <p class="testimonial-text">"We hadn't cleaned our gutters in 3 years and they were a mess. Affordable Home connected us with a local installer within a day. Best home upgrade we've made."</p>
+    <p class="testimonial-attr">— Sarah M., Columbus OH</p>
+  </div>
+</section>
+
+<!-- ── SECTION 6: FINAL CTA ── -->
+<section class="cta-banner">
+  <div class="container" style="max-width:700px;">
+    <h2>Ready to Never Clean Gutters Again?</h2>
+    <p>Get your free quote in under 2 minutes.</p>
+    <a href="#top" class="btn-white">Get My Free Quote</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="./logo.png" alt="Affordable Home" class="footer-logo" />
+  <p class="copyright">&copy; 2025 Affordable Home. All Rights Reserved.</p>
+  <p>Affordable Home is a lead generation service connecting homeowners with local gutter installation professionals. We are not a contractor.</p>
+</footer>
+
+<script>
+  let currentStep = 1;
+
+  // ── Phone masking ──
+  document.getElementById('phone').addEventListener('keyup', function(e) {
+    let val = this.value.replace(/\D/g, '').substring(0, 10);
+    if (val.length >= 7) {
+      val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
+    } else if (val.length >= 4) {
+      val = '(' + val.substring(0,3) + ') ' + val.substring(3);
+    } else if (val.length >= 1) {
+      val = '(' + val;
+    }
+    this.value = val;
+  });
+
+  // ── Validation helpers ──
+  function showError(fieldId, errId) {
+    document.getElementById(fieldId).classList.add('error');
+    document.getElementById(errId).classList.add('visible');
+  }
+
+  function clearError(fieldId, errId) {
+    document.getElementById(fieldId).classList.remove('error');
+    document.getElementById(errId).classList.remove('visible');
+  }
+
+  function clearAllErrors() {
+    document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.field-error.visible').forEach(el => el.classList.remove('visible'));
+  }
+
+  function validateStep1() {
+    let valid = true;
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!firstName) { showError('first-name', 'err-first-name'); valid = false; }
+    else clearError('first-name', 'err-first-name');
+
+    if (!lastName) { showError('last-name', 'err-last-name'); valid = false; }
+    else clearError('last-name', 'err-last-name');
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRe.test(email)) { showError('email', 'err-email'); valid = false; }
+    else clearError('email', 'err-email');
+
+    const phoneClean = phone.replace(/\D/g, '');
+    if (phoneClean.length !== 10) { showError('phone', 'err-phone'); valid = false; }
+    else clearError('phone', 'err-phone');
+
+    return valid;
+  }
+
+  function validateStep2() {
+    let valid = true;
+    if (!document.getElementById('gutter-age').value) {
+      showError('gutter-age', 'err-gutter-age'); valid = false;
+    } else clearError('gutter-age', 'err-gutter-age');
+
+    if (!document.getElementById('sqft').value) {
+      showError('sqft', 'err-sqft'); valid = false;
+    } else clearError('sqft', 'err-sqft');
+
+    return valid;
+  }
+
+  function validateStep3() {
+    let valid = true;
+    const street = document.getElementById('street').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const state = document.getElementById('state').value;
+    const zip = document.getElementById('zip').value.trim();
+
+    if (!street) { showError('street', 'err-street'); valid = false; }
+    else clearError('street', 'err-street');
+
+    if (!city) { showError('city', 'err-city'); valid = false; }
+    else clearError('city', 'err-city');
+
+    if (!state) { showError('state', 'err-state'); valid = false; }
+    else clearError('state', 'err-state');
+
+    if (!/^\d{5}$/.test(zip)) { showError('zip', 'err-zip'); valid = false; }
+    else clearError('zip', 'err-zip');
+
+    return valid;
+  }
+
+  // ── Step navigation ──
+  function goToStep(step) {
+    const current = document.getElementById('step-' + currentStep);
+    current.classList.remove('active');
+    current.style.opacity = '0';
+
+    setTimeout(() => {
+      current.style.display = 'none';
+      currentStep = step;
+      updateProgress();
+
+      const next = document.getElementById('step-' + currentStep);
+      next.style.display = 'block';
+      next.style.opacity = '0';
+      next.classList.add('active');
+      setTimeout(() => { next.style.opacity = '1'; }, 10);
+    }, 150);
+  }
+
+  function nextStep(from) {
+    if (from === 1 && !validateStep1()) return;
+    if (from === 2 && !validateStep2()) return;
+    goToStep(from + 1);
+  }
+
+  function prevStep(from) {
+    goToStep(from - 1);
+  }
+
+  function updateProgress() {
+    const pct = (currentStep / 3) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('step-count').textContent = 'Step ' + currentStep + ' of 3';
+
+    for (let i = 1; i <= 3; i++) {
+      const lbl = document.getElementById('lbl-' + i);
+      lbl.classList.remove('active', 'done');
+      if (i === currentStep) lbl.classList.add('active');
+      else if (i < currentStep) lbl.classList.add('done');
+    }
+  }
+
+  function submitForm() {
+    if (!validateStep3()) return;
+
+    const formData = {
+      firstName: document.getElementById('first-name').value.trim(),
+      lastName: document.getElementById('last-name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      gutterAge: document.getElementById('gutter-age').value,
+      sqft: document.getElementById('sqft').value,
+      street: document.getElementById('street').value.trim(),
+      city: document.getElementById('city').value.trim(),
+      state: document.getElementById('state').value,
+      zip: document.getElementById('zip').value.trim(),
+    };
+
+    console.log('Affordable Home — Form Submission:', formData);
+
+    window.location.href = './thank-you.html';
+  }
+</script>
+
+</body>
+</html>
