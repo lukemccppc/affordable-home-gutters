@@ -124,6 +124,7 @@
 
     .step-label .check { display: none; color: #F97316; }
     .step-label.done .check { display: inline; }
+    .step-label.done .num { display: none; }
 
     .progress-track {
       height: 6px;
@@ -483,8 +484,22 @@
 
     /* Section 6 -- Final CTA */
     .cta-banner {
-      background: #F97316;
+      position: relative;
+      background: url('./hero.jpg') center center / cover no-repeat;
       text-align: center;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 31, 60, 0.72);
+      z-index: 0;
+    }
+
+    .cta-banner .container {
+      position: relative;
+      z-index: 1;
     }
 
     .cta-banner h2 {
@@ -497,8 +512,8 @@
     .btn-white {
       display: inline-block;
       padding: 18px 64px;
-      background: #fff;
-      color: #F97316;
+      background: #F97316;
+      color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 20px;
       font-weight: 800;
@@ -567,10 +582,10 @@
       <!-- Progress Bar -->
       <div class="progress-wrap">
         <div class="step-labels">
-          <span class="step-label active" id="lbl-1"><span class="check">✓</span> Gutter Age</span>
-          <span class="step-label" id="lbl-2"><span class="check">✓</span> Home Size</span>
-          <span class="step-label" id="lbl-3"><span class="check">✓</span> Your Info</span>
-          <span class="step-label" id="lbl-4"><span class="check">✓</span> Phone</span>
+          <span class="step-label active" id="lbl-1"><span class="check">✓</span><span class="num">1</span></span>
+          <span class="step-label" id="lbl-2"><span class="check">✓</span><span class="num">2</span></span>
+          <span class="step-label" id="lbl-3"><span class="check">✓</span><span class="num">3</span></span>
+          <span class="step-label" id="lbl-4"><span class="check">✓</span><span class="num">✓</span></span>
         </div>
         <div class="progress-track">
           <div class="progress-fill" id="progress-fill" style="width: 25%"></div>
@@ -690,7 +705,9 @@
   <div class="container">
     <div class="two-col img-right">
       <div class="col-text">
-        <h2>Why Homeowners Choose Affordable Home</h2>
+        <h2>We Help Homeowners Protect What Matters Most</h2>
+        <p style="font-size:16px;color:#555;line-height:1.7;margin-bottom:20px;">We connect homeowners with vetted, certified local gutter specialists. We do the homework so you don't have to — every installer in our network is background-checked, licensed, and insured.</p>
+        <p style="font-size:16px;color:#555;line-height:1.7;margin-bottom:24px;">Since launching, we've helped thousands of families eliminate the hassle of gutter maintenance and protect their homes from water damage. Getting started takes less than two minutes.</p>
         <ul class="check-list">
           <li>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="#F97316"/><path d="M6 11.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
