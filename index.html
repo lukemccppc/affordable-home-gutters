@@ -25,13 +25,18 @@
     /* ── HERO ── */
     .hero {
       position: relative;
-      min-height: 88vh;
+      min-height: 80vh;
       background: url('./hero.jpg') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 0 16px 56px;
       text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero { justify-content: flex-end; padding-bottom: 72px; }
+      .hero-logo-bar { margin-bottom: 0; position: absolute; top: 24px; }
     }
 
     .hero::before {
@@ -341,6 +346,7 @@
     @media (max-width: 767px) {
       .two-col { grid-template-columns: 1fr; gap: 36px; }
       .two-col.img-right .col-img { order: -1; }
+      .why-section .col-text { text-align: center; }
     }
 
     .two-col h2 {
@@ -748,17 +754,6 @@
         <p>Certified local pros handle everything from measurement to cleanup.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── SECTION 5: TESTIMONIAL ── -->
-<section class="testimonial-section">
-  <div class="container" style="max-width:800px;">
-    <svg class="quote-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 28c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H10V28zm22 0c0-7.2 4.8-13.6 12-16l2 4c-4.4 1.6-7 5.2-7 8v2h8v12H32V28z" fill="#F97316"/>
-    </svg>
-    <p class="testimonial-text">"We hadn't cleaned our gutters in 3 years and they were a mess. Affordable Home connected us with a local installer within a day. Best home upgrade we've made."</p>
-    <p class="testimonial-attr">— Sarah M., Columbus OH</p>
   </div>
 </section>
 
