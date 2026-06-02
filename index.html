@@ -980,6 +980,7 @@
     document.getElementById('step-count').textContent = 'Step ' + currentStep + ' of ' + TOTAL_STEPS;
     for (let i = 1; i <= TOTAL_STEPS; i++) {
       const lbl = document.getElementById('lbl-' + i);
+      if (!lbl) continue;
       lbl.classList.remove('active', 'done');
       if (i === currentStep) lbl.classList.add('active');
       else if (i < currentStep) lbl.classList.add('done');
